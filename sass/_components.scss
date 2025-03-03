@@ -218,7 +218,7 @@
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
   
 
   &__heading {
@@ -284,7 +284,7 @@
   border: none;
   color: var(--color-primary);
   font-size: inherit;
-  border-bottom: 1px solid currentColor;
+  border-bottom: var(--line);
   padding-bottom: 2px;
   display: inline-block;
   background-color: transparent;

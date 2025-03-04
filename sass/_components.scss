@@ -13,7 +13,8 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;;
+  justify-content: center;
+  ;
 
   &__input {
     font-family: inherit;
@@ -38,7 +39,7 @@
     }
   }
 
-  &__input:focus + &__button {
+  &__input:focus+&__button {
     background-color: var(--color-grey-light-3)
   }
 
@@ -72,7 +73,7 @@
   display: flex;
   align-items: center;
 
-  & > * {
+  &>* {
     padding: 0 2rem;
     cursor: pointer;
     height: 100%;
@@ -80,7 +81,7 @@
     align-items: center;
   }
 
-  & > *:hover {
+  &>*:hover {
     background-color: var(--color-grey-light-2);
   }
 
@@ -92,7 +93,7 @@
     height: 2.25rem;
     width: 2.25rem;
     fill: var(--color-grey-dark-2);
-    
+
   }
 
   &__notification {
@@ -117,9 +118,7 @@
     margin-right: 1rem;
   }
 
-  &__user-name {
-
-  }
+  &__user-name {}
 }
 
 
@@ -150,8 +149,8 @@
     // transform-origin: bottom;
     transform: scaleY(0);
     transition: transform .2s,
-                width .4s cubic-bezier(1,0,0,1) .2s,
-                background-color .1s;
+      width .4s cubic-bezier(1, 0, 0, 1) .2s,
+      background-color .1s;
   }
 
   &__item:hover::before,
@@ -219,7 +218,7 @@
   display: flex;
   align-items: center;
   border-bottom: var(--line);
-  
+
 
   &__heading {
     font-size: 2.25rem;
@@ -275,7 +274,7 @@
     font-size: .8rem;
     text-transform: uppercase;
   }
-  
+
 }
 
 //////////////////////////////////
@@ -319,7 +318,7 @@
 
   50% {
     transform: scale(1.05);
-    box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, .25);
   }
 
   100% {
@@ -386,9 +385,7 @@
     margin-right: auto;
   }
 
-  &__friends {
-
-  }
+  &__friends {}
 
   &__photo {
     box-sizing: content-box;
@@ -432,7 +429,7 @@
     border-radius: 50%;
     margin-right: 1.5rem;
   }
-  
+
   &__user-box {
     margin-right: auto;
   }
@@ -468,4 +465,70 @@
     z-index: 1;
   }
 
+}
+
+
+//////////////////////////////////
+// CALL TO ACTION
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+  background-color: #fff;
+
+  &__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .2s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    display: inline-block;
+    position: absolute;
+    padding: 2rem 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
 }
